@@ -15,13 +15,11 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
 
     /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding inflate = ActivityMainBinding.inflate(getLayoutInflater());
-        this.binding = inflate;
         setContentView((View) inflate.getRoot());
         this.appBarConfiguration = new AppBarConfiguration.Builder(Navigation.findNavController(this, R.id.nav_host_fragment_content_main).getGraph()).build();
     }
