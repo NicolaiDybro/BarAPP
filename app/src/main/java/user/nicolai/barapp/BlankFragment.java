@@ -25,6 +25,7 @@ public class BlankFragment extends Fragment {
     }
     private FragmentBlankBinding binding;
 
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 

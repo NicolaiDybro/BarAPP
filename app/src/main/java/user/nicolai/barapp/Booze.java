@@ -29,7 +29,11 @@ public class Booze extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        binding.seekBar2.setMax(200);
+        binding.seekBar3.setMax(200);
+        binding.seekBar4.setMax(200);
+        binding.seekBar5.setMax(200);
+        binding.seekBar6.setMax(200);
         binding.imageView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,28 +44,39 @@ public class Booze extends Fragment {
 
 
         binding.seekBar6.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int before;
+            int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView2.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
+                before = seekBar.getProgress();
+                if (canTurn() > 200) {
+                    seekBar.setProgress(after);
+                }
+                after = seekBar.getProgress();
 
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
+                before = seekBar.getProgress();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
         binding.seekBar3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int before;
+            int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView3.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
+                before = seekBar.getProgress();
+                if (canTurn() > 200) {
+                    seekBar.setProgress(after);
+                }
+                after = seekBar.getProgress();
 
             }
 
@@ -76,10 +91,16 @@ public class Booze extends Fragment {
             }
         });
         binding.seekBar4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int before;
+            int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView4.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
+                before = seekBar.getProgress();
+                if (canTurn() > 200) {
+                    seekBar.setProgress(after);
+                }
+                after = seekBar.getProgress();
 
             }
 
@@ -94,11 +115,16 @@ public class Booze extends Fragment {
             }
         });
         binding.seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int before;
+            int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView5.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
-
+                before = seekBar.getProgress();
+                if (canTurn() > 200) {
+                    seekBar.setProgress(after);
+                }
+                after = seekBar.getProgress();
             }
 
             @Override
@@ -112,10 +138,16 @@ public class Booze extends Fragment {
             }
         });
         binding.seekBar5.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int before;
+            int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView6.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
+                before = seekBar.getProgress();
+                if (canTurn() > 200) {
+                    seekBar.setProgress(after);
+                }
+                after = seekBar.getProgress();
 
             }
 
@@ -130,6 +162,9 @@ public class Booze extends Fragment {
             }
         });
     }
+    public int canTurn() {
+        return binding.seekBar2.getProgress() + binding.seekBar3.getProgress() + binding.seekBar4.getProgress() + binding.seekBar5.getProgress() + binding.seekBar6.getProgress();
 
+    }
 
 }
