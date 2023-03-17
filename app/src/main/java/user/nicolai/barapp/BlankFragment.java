@@ -32,7 +32,7 @@ public class BlankFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(BlankFragment.this)
-                        .navigate(R.id.action_blankFragment_to_loginFragment);
+                        .navigate(R.id.action_blankFragment_to_FirstFragment);
             }
         });
         binding.imageView3.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +47,7 @@ public class BlankFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(BlankFragment.this)
-                        .navigate(R.id.action_blankFragment_to_Boozefragment);
+                        .navigate(R.id.action_blankFragment_to_Booze);
             }
         });
 

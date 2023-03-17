@@ -11,20 +11,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
 
-import user.nicolai.barapp.databinding.BoozeFragmentBinding;
+
+import user.nicolai.barapp.databinding.FragmentBoozeBinding;
 
 
-public class BlankFragment2 extends Fragment {
+public class Booze extends Fragment {
 
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = BoozeFragmentBinding.inflate(inflater, container, false);
+        binding = FragmentBoozeBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
-    private BoozeFragmentBinding binding;
+    private FragmentBoozeBinding binding;
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -32,10 +33,11 @@ public class BlankFragment2 extends Fragment {
         binding.imageView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(BlankFragment2.this)
-                        .navigate(R.id.action_Boozefragment_to_blankFragment);
+                NavHostFragment.findNavController(Booze.this)
+                        .navigate(R.id.action_Booze_to_blankFragment);
             }
         });
     }
+
 
 }
