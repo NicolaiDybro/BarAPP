@@ -143,4 +143,83 @@
         app:layout_constraintTop_toBottomOf="@+id/seekBar5"
         app:layout_constraintVertical_bias="1.0"
         tools:text="Lav min drink" />
+
+    <EditText
+        android:id="@+id/drink2Tekst"
+        android:layout_width="17dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="326dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <EditText
+        android:id="@+id/drink3Tekst"
+        android:layout_width="17dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="326dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="6dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <EditText
+        android:id="@+id/drink4Tekst"
+        android:layout_width="17dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="326dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+    <EditText
+        android:id="@+id/drink5Tekst"
+        android:layout_width="17dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="71dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/drink1Tekst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="18dp"
+        android:text="hey girl"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,6 +37,25 @@ public class Booze extends Fragment {
                         .navigate(R.id.action_Booze_to_blankFragment);
             }
         });
+
+        binding.seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                binding.drink1Tekst.setText(String.valueOf(seekBar.getProgress()));
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
 
