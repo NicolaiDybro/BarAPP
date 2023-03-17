@@ -42,7 +42,6 @@ public class FirstFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
       binding = FragmentFirstBinding.inflate(inflater, container, false);
       return binding.getRoot();
 
@@ -65,7 +64,7 @@ public class FirstFragment extends Fragment {
                             myThreadConnectBTdevice = new ThreadConnectBTdevice(device);
                             myThreadConnectBTdevice.start();
                             NavHostFragment.findNavController(FirstFragment.this)
-                                    .navigate(R.id.action_FirstFragment_to_SecondFragment2);
+                                    .navigate(R.id.action_FirstFragment_to_blankFragment);
                         } else {
                             myThreadConnected.write("test".getBytes());
                         }
