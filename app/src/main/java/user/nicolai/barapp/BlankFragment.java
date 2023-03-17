@@ -40,7 +40,7 @@ public class BlankFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(BlankFragment.this)
-                        .navigate(R.id.action_blankFragment_to_SecondFragment);
+                        .navigate(R.id.action_blankFragment_to_Booze);
             }
         });
 
@@ -48,7 +48,7 @@ public class BlankFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(BlankFragment.this)
-                        .navigate(R.id.action_blankFragment_to_Booze);
+                        .navigate(R.id.action_blankFragment_to_SecondFragment);
             }
         });
 

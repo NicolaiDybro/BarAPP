@@ -41,8 +41,11 @@ public class Booze extends Fragment {
                         .navigate(R.id.action_Booze_to_blankFragment);
             }
         });
-
-
+        binding.seekBar2.setMax(200);
+        binding.seekBar3.setMax(200);
+        binding.seekBar4.setMax(200);
+        binding.seekBar5.setMax(200);
+        binding.seekBar6.setMax(200);
         binding.seekBar6.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int before;
             int after = 0;
