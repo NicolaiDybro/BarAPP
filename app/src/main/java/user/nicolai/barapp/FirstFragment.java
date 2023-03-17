@@ -32,9 +32,6 @@ public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
     ThreadConnectBTdevice myThreadConnectBTdevice;
     ThreadConnected myThreadConnected;
-    /* access modifiers changed from: private */
-    private UUID myUUID;
-    /* access modifiers changed from: private */
     public Set<BluetoothDevice> pairedDevices;
 
     @Override
@@ -52,7 +49,6 @@ public class FirstFragment extends Fragment {
         this.binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
             public void onClick(View view) {
-                myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
                 bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
                 Intent enableAdapter = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableAdapter, 0);
@@ -150,11 +146,7 @@ public class FirstFragment extends Fragment {
             bluetoothDevice = device;
             try {
                 bluetoothSocket = (BluetoothSocket) this.bluetoothDevice.getClass().getMethod("createRfcommSocket", Integer.TYPE).invoke(this.bluetoothDevice, new Object[]{1});
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (NoSuchMethodException e) {
+            } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
                 throw new RuntimeException(e);
             }
         }
@@ -167,7 +159,6 @@ public class FirstFragment extends Fragment {
                 success = true;
             } catch (IOException e) {
                 e.printStackTrace();
-                final String eMessage = e.getMessage();
                 try {
                     bluetoothSocket.close();
                 } catch (IOException e1) {
@@ -183,13 +174,6 @@ public class FirstFragment extends Fragment {
             System.out.println("FEJL!!");
         }
 
-        public void cancel() {
-            try {
-                this.bluetoothSocket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
 }
