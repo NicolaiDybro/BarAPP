@@ -28,7 +28,7 @@ private FragmentSecondBinding binding;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.imageView2.setOnClickListener(new View.OnClickListener() {
+        binding.imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)

@@ -65,7 +65,7 @@ public class FirstFragment extends Fragment {
                             myThreadConnectBTdevice = new ThreadConnectBTdevice(device);
                             myThreadConnectBTdevice.start();
                             NavHostFragment.findNavController(FirstFragment.this)
-                                    .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                                    .navigate(R.id.action_FirstFragment_to_SecondFragment2);
                         } else {
                             myThreadConnected.write("test".getBytes());
                         }
