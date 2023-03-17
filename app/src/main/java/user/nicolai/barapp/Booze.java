@@ -38,10 +38,10 @@ public class Booze extends Fragment {
             }
         });
 
-        binding.seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        binding.seekBar6.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                binding.drink1Tekst.setText(String.valueOf(seekBar.getProgress()));
+                binding.textView2.setText(String.valueOf(seekBar.getProgress()));
 
             }
 
