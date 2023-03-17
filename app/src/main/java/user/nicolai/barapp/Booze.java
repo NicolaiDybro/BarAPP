@@ -39,11 +39,11 @@ public class Booze extends Fragment {
         });
 
 
+
         binding.seekBar6.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView2.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
 
             }
 
@@ -61,7 +61,6 @@ public class Booze extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView3.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
 
             }
 
@@ -79,7 +78,6 @@ public class Booze extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView4.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
 
             }
 
@@ -97,7 +95,6 @@ public class Booze extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView5.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
 
             }
 
@@ -115,7 +112,6 @@ public class Booze extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 binding.textView6.setText(String.valueOf(seekBar.getProgress()));
-                seekBar.setMax(200);
 
             }
 
