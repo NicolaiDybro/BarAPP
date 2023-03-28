@@ -31,7 +31,7 @@ public class FirstFragment extends Fragment {
     public BluetoothAdapter bluetoothAdapter;
     private FragmentFirstBinding binding;
     ThreadConnectBTdevice myThreadConnectBTdevice;
-    ThreadConnected myThreadConnected;
+    public static ThreadConnected myThreadConnected;
     public Set<BluetoothDevice> pairedDevices;
 
     @Override
@@ -50,7 +50,7 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
                 Intent enableAdapter = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableAdapter, 0);
+                startActivity(enableAdapter);
                 pairedDevices = bluetoothAdapter.getBondedDevices();
                 for (BluetoothDevice device : pairedDevices) {
                     System.out.println(device.getName() + ": " + device.getAddress());
@@ -60,8 +60,7 @@ public class FirstFragment extends Fragment {
                             myThreadConnectBTdevice.start();
                             NavHostFragment.findNavController(FirstFragment.this)
                                     .navigate(R.id.action_FirstFragment_to_blankFragment);
-                        } else {
-                            myThreadConnected.write("1:4:3:2:1:2".getBytes());
+
                         }
                     }
                 }
@@ -76,7 +75,7 @@ public class FirstFragment extends Fragment {
         threadConnected.start();
     }
 
-    private static class ThreadConnected extends Thread {
+    public static class ThreadConnected extends Thread {
         private final BluetoothSocket connectedBluetoothSocket;
         private final InputStream connectedInputStream;
         private final OutputStream connectedOutputStream;
@@ -140,7 +139,6 @@ public class FirstFragment extends Fragment {
         private final BluetoothDevice bluetoothDevice;
 
 
-        @SuppressLint("MissingPermission")
         ThreadConnectBTdevice(BluetoothDevice device) {
             bluetoothDevice = device;
             try {

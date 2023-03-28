@@ -1,5 +1,7 @@
 package user.nicolai.barapp;
 
+import static user.nicolai.barapp.FirstFragment.myThreadConnected;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +37,14 @@ private FragmentSecondBinding binding;
                         .navigate(R.id.action_SecondFragment_to_blankFragment);
             }
         });
+
+        binding.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
     }
 
 @Override

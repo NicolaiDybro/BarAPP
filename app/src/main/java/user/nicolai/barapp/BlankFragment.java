@@ -1,5 +1,7 @@
 package user.nicolai.barapp;
 
+import static user.nicolai.barapp.FirstFragment.myThreadConnected;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
