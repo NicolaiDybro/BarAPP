@@ -61,7 +61,7 @@ public class FirstFragment extends Fragment {
                             NavHostFragment.findNavController(FirstFragment.this)
                                     .navigate(R.id.action_FirstFragment_to_blankFragment);
                         } else {
-                            myThreadConnected.write("test".getBytes());
+                            myThreadConnected.write("1:4:3:2:1:2".getBytes());
                         }
                     }
                 }
