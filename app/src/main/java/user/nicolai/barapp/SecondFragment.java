@@ -45,6 +45,69 @@ private FragmentSecondBinding binding;
             }
         });
 
+        binding.imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
+        binding.imageButton11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myThreadConnected.write("1:2:3:1:5:3".getBytes());
+            }
+        });
+
     }
 
 @Override
@@ -52,5 +115,4 @@ private FragmentSecondBinding binding;
         super.onDestroyView();
         binding = null;
     }
-
 }
