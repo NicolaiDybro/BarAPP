@@ -13,7 +13,6 @@ import androidx.navigation.fragment.NavHostFragment;
 import user.nicolai.barapp.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
-
 private FragmentSecondBinding binding;
 
     @Override

@@ -94,21 +94,25 @@
 
     <SeekBar
         android:id="@+id/seekBar5"
+        android:background="#181111"
         android:layout_width="259dp"
         android:layout_height="55dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="556dp"
+        android:progressDrawable="@drawable/custom_seekbar"
+        android:thumbTint="@android:color/holo_orange_dark"
+        android:progressTint="@android:color/holo_orange_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/seekBar6"
-        android:layout_width="259dp"
         android:layout_height="55dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="128dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content" />
 
     <SeekBar
         android:id="@+id/seekBar3"
@@ -121,6 +125,7 @@
 
     <SeekBar
         android:id="@+id/seekBar4"
+
         android:layout_width="259dp"
         android:layout_height="55dp"
         android:layout_marginStart="26dp"
@@ -185,10 +190,11 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="80dp"
-        android:layout_height="31dp"
+        android:layout_width="73dp"
+        android:layout_height="37dp"
         android:layout_marginTop="566dp"
         android:layout_marginEnd="30dp"
+        android:background="#181111"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="24sp"

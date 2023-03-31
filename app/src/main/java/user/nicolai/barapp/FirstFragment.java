@@ -135,7 +135,7 @@ public class FirstFragment extends Fragment {
     }
 
     public class ThreadConnectBTdevice extends Thread{
-        private BluetoothSocket bluetoothSocket = null;
+        private BluetoothSocket bluetoothSocket;
         private final BluetoothDevice bluetoothDevice;
 
 
