@@ -65,7 +65,7 @@ public class Booze extends Fragment {
             int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                binding.textView2.setText(String.valueOf(seekBar.getProgress()));
+                binding.textView2.setText(String.valueOf(seekBar.getProgress() + " ml"));
                 before = seekBar.getProgress();
                 if (canTurn() > 200) {
                     seekBar.setProgress(after);
@@ -88,7 +88,7 @@ public class Booze extends Fragment {
             int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                binding.textView3.setText(String.valueOf(seekBar.getProgress()));
+                binding.textView3.setText(String.valueOf(seekBar.getProgress()+ " ml"));
                 before = seekBar.getProgress();
                 if (canTurn() > 200) {
                     seekBar.setProgress(after);
@@ -112,7 +112,7 @@ public class Booze extends Fragment {
             int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                binding.textView4.setText(String.valueOf(seekBar.getProgress()));
+                binding.textView4.setText(String.valueOf(seekBar.getProgress()+ " ml"));
                 before = seekBar.getProgress();
                 if (canTurn() > 200) {
                     seekBar.setProgress(after);
@@ -136,7 +136,7 @@ public class Booze extends Fragment {
             int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                binding.textView5.setText(String.valueOf(seekBar.getProgress()));
+                binding.textView5.setText(String.valueOf(seekBar.getProgress()+ " ml"));
                 before = seekBar.getProgress();
                 if (canTurn() > 200) {
                     seekBar.setProgress(after);
@@ -159,7 +159,7 @@ public class Booze extends Fragment {
             int after = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                binding.textView6.setText(String.valueOf(seekBar.getProgress()));
+                binding.textView6.setText(String.valueOf(seekBar.getProgress()+ " ml"));
                 before = seekBar.getProgress();
                 if (canTurn() > 200) {
                     seekBar.setProgress(after);
