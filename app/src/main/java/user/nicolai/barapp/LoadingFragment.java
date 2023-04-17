@@ -25,6 +25,11 @@ import user.nicolai.barapp.databinding.LoadingScreenBinding;
 public class LoadingFragment extends Fragment {
     private LoadingScreenBinding binding;
 
+    public void SwitchScene() {
+        NavHostFragment.findNavController(this)
+                .navigate(R.id.action_blankFragment_to_FirstFragment);
+    }
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,

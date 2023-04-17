@@ -77,7 +77,7 @@ public class FirstFragment extends Fragment {
         threadConnected.start();
     }
 
-    public class ThreadConnected extends Thread {
+    public static class ThreadConnected extends Thread {
         private final BluetoothSocket connectedBluetoothSocket;
         private final InputStream connectedInputStream;
         private final OutputStream connectedOutputStream;
@@ -108,10 +108,7 @@ public class FirstFragment extends Fragment {
                 String strReceived = new String(buffer, 0, bytes);
                 System.out.println(strReceived);
                 if (strReceived.equals("loading")) {
-                    View rootView = binding.getRoot().getRootView();
-                    Context context = rootView.getContext();
-                    Intent intent = new Intent(context, SecondFragment.class);
-                    startActivity(intent);
+
                 }
             } catch (RuntimeException e) {
                 throw new RuntimeException(e);
