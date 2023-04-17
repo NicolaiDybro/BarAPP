@@ -2,6 +2,9 @@ package user.nicolai.barapp;
 
 import static user.nicolai.barapp.FirstFragment.myThreadConnected;
 
+import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
+import android.widget.VideoView;
 
 
 import user.nicolai.barapp.databinding.FragmentBoozeBinding;
@@ -19,6 +23,18 @@ import user.nicolai.barapp.databinding.FragmentBoozeBinding;
 
 public class Booze extends Fragment {
 
+    public void startLoading() {
+        binding.videoView.setVisibility(View.VISIBLE);
+        binding.underLayout.setVisibility(View.GONE);
+        binding.overLayout.setBackgroundColor(Color.BLACK);
+        binding.videoView.start();
+    }
+
+    public static void stopLoading2() {
+        binding.videoView.setVisibility(View.GONE);
+        binding.underLayout.setVisibility(View.VISIBLE);
+        binding.overLayout.setBackgroundColor(Color.alpha(181111));
+    }
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
@@ -27,10 +43,21 @@ public class Booze extends Fragment {
         binding = FragmentBoozeBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-    private FragmentBoozeBinding binding;
+    private static FragmentBoozeBinding binding;
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        VideoView simpleVideoView = binding.videoView;
+        simpleVideoView.setVideoURI(Uri.parse("android.resource://" + BuildConfig.APPLICATION_ID + "/" + R.raw.loading));
+
+        simpleVideoView.start();
+        binding.videoView.setVisibility(View.GONE);
+        this.binding.videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                simpleVideoView.start();
+            }
+        });
         binding.seekBar2.setMax(200);
         binding.seekBar3.setMax(200);
         binding.seekBar4.setMax(200);
@@ -41,7 +68,8 @@ public class Booze extends Fragment {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int start = 1;
+                startLoading();
+                int start = 2;
                 int progress1 = binding.seekBar2.getProgress();
                 int progress2 = binding.seekBar3.getProgress();
                 int progress3 = binding.seekBar4.getProgress();

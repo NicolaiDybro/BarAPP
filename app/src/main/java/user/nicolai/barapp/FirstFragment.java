@@ -1,12 +1,18 @@
 package user.nicolai.barapp;
 
+import static user.nicolai.barapp.SecondFragment.stopLoading1;
+import static user.nicolai.barapp.Booze.stopLoading2;
+
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,13 +32,11 @@ import java.util.UUID;
 import java.util.zip.Inflater;
 
 import user.nicolai.barapp.databinding.FragmentFirstBinding;
-import user.nicolai.barapp.databinding.LoadingScreenBinding;
-
 public class FirstFragment extends Fragment {
 
 
     public BluetoothAdapter bluetoothAdapter;
-    private FragmentFirstBinding binding;
+    private static FragmentFirstBinding binding;
     ThreadConnectBTdevice myThreadConnectBTdevice;
     public static ThreadConnected myThreadConnected;
     public Set<BluetoothDevice> pairedDevices;
@@ -47,6 +51,7 @@ public class FirstFragment extends Fragment {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
         this.binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
@@ -107,8 +112,13 @@ public class FirstFragment extends Fragment {
                 }
                 String strReceived = new String(buffer, 0, bytes);
                 System.out.println(strReceived);
-                if (strReceived.equals("loading")) {
-
+                if (strReceived.equals("loading1")) {
+                    final android.os.Handler handler=new android.os.Handler(Looper.getMainLooper());
+                    handler.post(SecondFragment::stopLoading1);
+                }
+                if (strReceived.equals("loading2")) {
+                    final android.os.Handler handler=new android.os.Handler(Looper.getMainLooper());
+                    handler.post(Booze::stopLoading2);
                 }
             } catch (RuntimeException e) {
                 throw new RuntimeException(e);
