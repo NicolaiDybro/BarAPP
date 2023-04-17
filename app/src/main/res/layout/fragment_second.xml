@@ -62,12 +62,17 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="13dp"
+                        android:adjustViewBounds="true"
+                        android:backgroundTint="#FFFFFF"
                         android:contentDescription="Yes"
+                        android:cropToPadding="true"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/drink1"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/imageButton2"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@tools:sample/avatars" />
+                        tools:src="@drawable/drink1" />
 
                     <ImageButton
                         android:id="@+id/imageButton2"
@@ -77,12 +82,15 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="25dp"
                         android:layout_marginBottom="13dp"
+                        android:backgroundTint="#FFFFFF"
                         android:contentDescription="Yes"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/drink2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imageButton"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@tools:sample/avatars" />
+                        tools:src="@drawable/drink2" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </TableRow>
 
@@ -116,12 +124,14 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="104dp"
                         android:layout_marginBottom="13dp"
+                        android:backgroundTint="@color/white"
                         android:contentDescription="Yes"
+                        android:scaleType="fitEnd"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/imageButton4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@tools:sample/avatars" />
+                        tools:src="@drawable/drink3" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </TableRow>
 

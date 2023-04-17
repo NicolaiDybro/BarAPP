@@ -2,12 +2,15 @@ package user.nicolai.barapp;
 
 import static user.nicolai.barapp.FirstFragment.myThreadConnected;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import user.nicolai.barapp.databinding.FragmentSecondBinding;
@@ -41,6 +44,8 @@ private FragmentSecondBinding binding;
             @Override
             public void onClick(View view) {
                 myThreadConnected.write("1:2:3:1:5:3".getBytes());
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_loadingFragment);
             }
         });
 
@@ -48,6 +53,8 @@ private FragmentSecondBinding binding;
             @Override
             public void onClick(View view) {
                 myThreadConnected.write("1:2:3:1:5:3".getBytes());
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_loadingFragment);
             }
         });
 
@@ -55,6 +62,8 @@ private FragmentSecondBinding binding;
             @Override
             public void onClick(View view) {
                 myThreadConnected.write("1:2:3:1:5:3".getBytes());
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_loadingFragment);
             }
         });
 
@@ -62,6 +71,8 @@ private FragmentSecondBinding binding;
             @Override
             public void onClick(View view) {
                 myThreadConnected.write("1:2:3:1:5:3".getBytes());
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_loadingFragment);
             }
         });
 
@@ -108,6 +119,7 @@ private FragmentSecondBinding binding;
         });
 
     }
+
 
 @Override
     public void onDestroyView() {

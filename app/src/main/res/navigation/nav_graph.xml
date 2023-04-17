@@ -37,11 +37,10 @@
         <action
             android:id="@+id/action_SecondFragment_to_blankFragment"
             app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="user.nicolai.barapp.SQL.BrugerInterface.LoginFragment"
-        android:label="LoginFragment" />
     <fragment
         android:id="@+id/Booze"
         android:name="user.nicolai.barapp.Booze"
@@ -51,4 +50,8 @@
             android:id="@+id/action_Booze_to_blankFragment"
             app:destination="@id/blankFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="user.nicolai.barapp.LoadingFragment"
+        android:label="LoadingFragment" />
 </navigation>

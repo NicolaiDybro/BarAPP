@@ -22,10 +22,10 @@ public class Booze extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
-    ) {
+    )
+    {
         binding = FragmentBoozeBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
     private FragmentBoozeBinding binding;
 
@@ -36,15 +36,17 @@ public class Booze extends Fragment {
         binding.seekBar4.setMax(200);
         binding.seekBar5.setMax(200);
         binding.seekBar6.setMax(200);
-        int start = 2 ;
-        int progress1 = binding.seekBar2.getProgress();
-        int progress2 = binding.seekBar3.getProgress();
-        int progress3 = binding.seekBar4.getProgress();
-        int progress4 = binding.seekBar5.getProgress();
-        int progress5 = binding.seekBar6.getProgress();
+
+
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int start = 1;
+                int progress1 = binding.seekBar2.getProgress();
+                int progress2 = binding.seekBar3.getProgress();
+                int progress3 = binding.seekBar4.getProgress();
+                int progress4 = binding.seekBar5.getProgress();
+                int progress5 = binding.seekBar6.getProgress();
                 myThreadConnected.write((start+":"+progress1+":"+progress2+":"+progress3+":"+progress4+":"+progress5+":").getBytes());
             }
         });
@@ -182,7 +184,6 @@ public class Booze extends Fragment {
     }
     public int canTurn() {
         return binding.seekBar2.getProgress() + binding.seekBar3.getProgress() + binding.seekBar4.getProgress() + binding.seekBar5.getProgress() + binding.seekBar6.getProgress();
-
     }
 
 

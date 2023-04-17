@@ -29,21 +29,13 @@
         android:layout_height="58dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/my_button_bg"
-        android:backgroundTint="#181111"
-        android:contentDescription="yes"
-        android:drawableTint="#FFFFFF"
         android:fontFamily="@font/oswald_bold"
-        android:outlineAmbientShadowColor="#FFFFFF"
-        android:outlineProvider="background"
-        android:outlineSpotShadowColor="#FFFFFF"
         android:text="@string/next"
         android:textColor="#FDFDFD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_first"
-        app:strokeColor="@color/white"
-        app:strokeWidth="@dimen/fab_margin" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,8 +23,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.BreakIterator;
 import java.util.Set;
 import java.util.UUID;
+import java.util.zip.Inflater;
 
 import user.nicolai.barapp.databinding.FragmentFirstBinding;
+import user.nicolai.barapp.databinding.LoadingScreenBinding;
 
 public class FirstFragment extends Fragment {
 
@@ -60,7 +63,6 @@ public class FirstFragment extends Fragment {
                             myThreadConnectBTdevice.start();
                             NavHostFragment.findNavController(FirstFragment.this)
                                     .navigate(R.id.action_FirstFragment_to_blankFragment);
-
                         }
                     }
                 }
@@ -75,7 +77,7 @@ public class FirstFragment extends Fragment {
         threadConnected.start();
     }
 
-    public static class ThreadConnected extends Thread {
+    public class ThreadConnected extends Thread {
         private final BluetoothSocket connectedBluetoothSocket;
         private final InputStream connectedInputStream;
         private final OutputStream connectedOutputStream;
@@ -104,9 +106,13 @@ public class FirstFragment extends Fragment {
                     throw new RuntimeException(e);
                 }
                 String strReceived = new String(buffer, 0, bytes);
-                final String msgReceived = String.valueOf(bytes) +
-                        " bytes received:\n"
-                        + strReceived;
+                System.out.println(strReceived);
+                if (strReceived.equals("loading")) {
+                    View rootView = binding.getRoot().getRootView();
+                    Context context = rootView.getContext();
+                    Intent intent = new Intent(context, SecondFragment.class);
+                    startActivity(intent);
+                }
             } catch (RuntimeException e) {
                 throw new RuntimeException(e);
             }
@@ -170,7 +176,6 @@ public class FirstFragment extends Fragment {
             }
             System.out.println("FEJL!!");
         }
-
     }
 
 }
